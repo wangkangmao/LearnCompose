@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.ComponentActivity
 import tv.yunxi.learncompose.image.ImageActivity
+import tv.yunxi.learncompose.material.AlertDialogActivity
+import tv.yunxi.learncompose.material.DrawerAppActivity
 import tv.yunxi.learncompose.text.CustomTextActivity
 import tv.yunxi.learncompose.text.HorizontalScrollableActivity
 import tv.yunxi.learncompose.text.SimpleTextActivity
@@ -34,5 +36,13 @@ class MainActivity : ComponentActivity() {
 
     fun starLoadImageExample(view: View) {
         startActivity(Intent(this, ImageActivity::class.java))
+    }
+
+    fun startAlertDialogExample(view: View) {
+        startActivity(Intent(this, AlertDialogActivity::class.java))
+    }
+
+    fun startDrawerExample(view: View) {
+        startActivity(Intent(this, DrawerAppActivity::class.java))
     }
 }
