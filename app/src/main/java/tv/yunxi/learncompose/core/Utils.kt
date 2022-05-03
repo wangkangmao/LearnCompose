@@ -33,7 +33,7 @@ fun getPersonList() = listOf(
     Person("Joe Defoe", 35)
 )
 
-fun getSuperheroList() = listOf(
+fun getSuperheroList(): List<Person> = listOf(
     Person("Iron Man", 43, "https://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg"),
     Person("Hulk", 38, "https://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg"),
     Person("Deadpool", 25, "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5261a86cacb99.jpg"),

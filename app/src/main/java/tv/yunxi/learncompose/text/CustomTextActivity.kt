@@ -5,12 +5,14 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
@@ -59,6 +61,7 @@ class CustomTextActivity : AppCompatActivity() {
                 ModifiedLineHeightText()
                 CustomAnnotatedText()
                 TextWithBackground()
+                TextWithBackgroundCircle()
             }
         }
     }
@@ -223,6 +226,15 @@ private fun TextWithBackground() {
 }
 
 @Composable
+private fun TextWithBackgroundCircle() {
+    Surface(color = Color.Yellow, modifier = Modifier.clip(CircleShape)) {
+        Text("D1",
+            modifier = Modifier
+                .padding(16.dp))
+    }
+}
+
+@Composable
 private fun CustomStyledText(displayText: String, style: TextStyle? = null, maxLine: Int? = null) {
     Text(
         text = displayText,
@@ -236,19 +248,20 @@ private fun CustomStyledText(displayText: String, style: TextStyle? = null, maxL
 @Preview
 @Composable
 fun CustomStyleTextPreview() {
-    CustomStyledText(
-        displayText = "This ia preview text",
-        maxLine = 2,
-        style = TextStyle(
-            color = Color.Yellow,
-            fontWeight = FontWeight.W900,
-            fontStyle = FontStyle.Italic,
-            fontFamily = FontFamily.Serif,
-            fontSize = 20.sp,
-            textAlign = TextAlign.Justify
+//    CustomStyledText(
+//        displayText = "This ia preview text",
+//        maxLine = 2,
+//        style = TextStyle(
+//            color = Color.Yellow,
+//            fontWeight = FontWeight.W900,
+//            fontStyle = FontStyle.Italic,
+//            fontFamily = FontFamily.Serif,
+//            fontSize = 20.sp,
+//            textAlign = TextAlign.Justify
+//
+//        )
+//    )
 
-        )
-    )
 }
 
 
