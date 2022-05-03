@@ -29,29 +29,42 @@ class ButtonActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            preView()
+            ButtonActivityContent()
         }
     }
 
 }
 
 @Composable
+fun ButtonActivityContent() {
+    Column(modifier = Modifier.fillMaxSize()) {
+        SimpleButtonComponent()
+        SimpleButtonWithBorderComponent()
+        RoundedCornerButtonComponent()
+        OutlinedButtonComponent()
+        TextButtonComponent()
+    }
+}
+
+
+@Composable
 fun SimpleButtonComponent() {
     Button(
-        onClick = { /*TODO*/ }, modifier = Modifier.padding(16.dp),
-        elevation = ButtonDefaults.elevation(5.dp)
-    ) {
+        modifier = Modifier.padding(16.dp),
+        elevation = ButtonDefaults.elevation(5.dp),
+        onClick = {}) {
         Text(text = "Simple button", modifier = Modifier.padding(16.dp))
-
     }
 }
 
 @Composable
 fun SimpleButtonWithBorderComponent() {
-    Button(onClick = { /*TODO*/ },
-    modifier = Modifier.padding(16.dp),
-    elevation = ButtonDefaults.elevation(5.dp),
-    border = BorderStroke(width = 5.dp, brush = SolidColor(Color.Black))
+    Button(
+        onClick = {},
+        modifier = Modifier.padding(16.dp),
+        elevation = ButtonDefaults.elevation(5.dp),
+        // Provide a border for this button
+        border = BorderStroke(width = 5.dp, brush = SolidColor(Color.Black))
     ) {
         Text(text = "Simple button with border", modifier = Modifier.padding(16.dp))
     }
@@ -59,39 +72,72 @@ fun SimpleButtonWithBorderComponent() {
 
 @Composable
 fun RoundedCornerButtonComponent() {
-    Button(onClick = { /*TODO*/ },
-    modifier = Modifier.padding(16.dp),
-    shape = RoundedCornerShape(16.dp),
-    elevation = ButtonDefaults.elevation(5.dp)) {
-        Text(text = "Button with rounded cornets", modifier = Modifier.padding(16.dp))
+    Button(
+        onClick = {},
+        modifier = Modifier.padding(16.dp),
+        shape = RoundedCornerShape(16.dp),
+        elevation = ButtonDefaults.elevation(5.dp),
+    ) {
+        Text(text = "Button with rounded corners", modifier = Modifier.padding(16.dp))
     }
 }
 
 @Composable
 fun OutlinedButtonComponent() {
-    OutlinedButton(onClick = { /*TODO*/ },
-    modifier = Modifier.padding(16.dp)) {
+    OutlinedButton(
+        onClick = {},
+        modifier = Modifier.padding(16.dp)
+    ) {
         Text(text = "Outlined Button", modifier = Modifier.padding(16.dp))
     }
 }
 
 @Composable
 fun TextButtonComponent() {
-    TextButton(onClick = { /*TODO*/ },
-    Modifier.padding(16.dp)) {
-        Text(text = "Text Button",Modifier.padding(16.dp))
+    TextButton(
+        onClick = {},
+        modifier = Modifier.padding(16.dp)
+    ) {
+        Text(text = "Text Button", modifier = Modifier.padding(16.dp))
     }
 }
 
-
-@Preview(showBackground = true)
+@Preview("Example showing a simple button")
 @Composable
-private fun preView() {
-    Column(modifier = Modifier.fillMaxSize()) {
+fun SimpleButtonComponentPreview() {
+    Column {
         SimpleButtonComponent()
+    }
+}
+
+@Preview("Example showing a button with border")
+@Composable
+fun SimpleButtonWithBorderComponentPreview() {
+    Column {
         SimpleButtonWithBorderComponent()
+    }
+}
+
+@Preview("Example showing a button with corners")
+@Composable
+fun RoundedCornerButtonComponentPreview() {
+    Column {
         RoundedCornerButtonComponent()
+    }
+}
+
+@Preview("Example showing a outline button")
+@Composable
+fun OutlinedButtonComponentPreview() {
+    Column {
         OutlinedButtonComponent()
+    }
+}
+
+@Preview("Example showing a text button")
+@Composable
+fun TextButtonComponentPreview() {
+    Column {
         TextButtonComponent()
     }
 }
