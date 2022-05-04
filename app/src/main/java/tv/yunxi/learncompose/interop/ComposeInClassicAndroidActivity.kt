@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import tv.yunxi.learncompose.core.colors
 import tv.yunxi.learncompose.databinding.ActivityComposeInClassicAndroidBinding
-import tv.yunxi.learncompose.databinding.ActivityMainBinding
 
 /**
  * @author: created by wangkm
@@ -41,6 +40,7 @@ class ComposeInClassicAndroidActivity : AppCompatActivity() {
         mBinding?.composeView?.setContent {
             ComposeInClassicAndroidActivityContent()
         }
+
     }
 }
 
