@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "LearnCompose"
 include ':app'
+include ':demos:tiktok'
+include ':components:mcarousel'
